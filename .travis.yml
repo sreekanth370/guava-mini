@@ -1,8 +1,14 @@
 language: java
 arch:
-  - amd64
-  - ppc64le
+ - amd64
+ - ppc64le
 jdk:
   - openjdk8
-packages:
-  - maven
+  - openjdk11
+addons:
+  apt:
+    packages:
+      - openjdk-8-source
+      - maven
+
+install: mvn -B -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn install -U -DskipTests=true -f $ROOT_POM
