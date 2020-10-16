@@ -4,3 +4,5 @@ arch:
  - ppc64le
 jdk:
   - openjdk8
+    packages:
+ - maven
